@@ -21,9 +21,8 @@ class YandexDisk:
         response = requests.get(upload_url, headers=headers, params=params)
         href = (response.json()["href"])
         response_put = requests.put(href, data=open(file_path, 'rb'))
-        return response_put
+        print(response_put)
 
 
 Ya_upload = YandexDisk(token_v1)
-
 Ya_upload.upload("file_for_yandeks_disc.txt")
